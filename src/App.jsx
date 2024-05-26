@@ -113,7 +113,7 @@ function App() {
             </select>
             <input type="number" onInput={(e)=>setInfos({...infos,eta:e.target.value})} min="18" max="99" placeholder="Età" className="p-3 rounded-full text-xl min-w-32" defaultValue={infos.eta}/>
           </div>
-          <label htmlFor="sliderPeso" className="text-white text-2xl font-semibold self-start">{infos.peso} kg</label>
+          <label htmlFor="sliderPeso" className="text-white text-2xl font-semibold self-start mt-5">{infos.peso} kg</label>
           <input type="range" name="sliderPeso" id="sliderPeso" step={0.5} className="w-full p-2 cursor-pointer mb-10" min="45" max="160" defaultValue={infos.peso} onChange={(e)=>setInfos({...infos,peso:e.target.value})} />
           <label htmlFor="sliderAltezza" className="text-white text-2xl font-semibold self-start">{infos.altezza} cm</label>
           <input type="range" name="sliderAltezza" id="sliderAltezza" step={0.5} className="w-full p-2 cursor-pointer mb-10" min="140" max="210" defaultValue={infos.altezza} onChange={(e)=>setInfos({...infos,altezza:e.target.value})} />
