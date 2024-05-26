@@ -13,7 +13,7 @@ function App() {
 
     setResults({...results,pesoForma:calcPesoForma(),bmi:calcBMI(),metaBas:calcMetBas().toFixed(0),fabCal:calcFabGiorn()});
 
-
+    document.getElementById("myBody").classList.remove("h-lvh"); 
     document.getElementById("listInfo1").classList.remove("hidden"); 
     document.getElementById("bmi_scala").classList.remove("hidden");
     document.getElementById("listInfo2").classList.remove("hidden"); 
@@ -103,15 +103,15 @@ function App() {
   }
 
   return (
-    <div  className="bg-gradient-to-bl to-green-400 from-green-950">
+    <div id="myBody" className="bg-gradient-to-bl to-green-400 from-green-950 h-lvh ">
         <div className="w-5/6 mx-auto pt-16 flex flex-col items-center">
-          <h1 className="text-white text-6xl font-bold mb-14">PESO FORMA</h1>
+          <h1 className="text-white text-6xl font-bold mb-14 text-center">PESO FORMA</h1>
           <div className="w-full flex flex-row justify-evenly">
             <select onChange={(e)=>setInfos({...infos,sesso:e.target.value})} className="p-3 rounded-full text-xl">
               <option value="uomo">uomo</option>
               <option value="donna">donna</option>
             </select>
-            <input type="number" onInput={(e)=>setInfos({...infos,eta:e.target.value})} min="18" max="99" placeholder="Età" className="p-3 rounded-full text-xl" defaultValue={infos.eta}/>
+            <input type="number" onInput={(e)=>setInfos({...infos,eta:e.target.value})} min="18" max="99" placeholder="Età" className="p-3 rounded-full text-xl min-w-32" defaultValue={infos.eta}/>
           </div>
           <label htmlFor="sliderPeso" className="text-white text-2xl font-semibold self-start">{infos.peso} kg</label>
           <input type="range" name="sliderPeso" id="sliderPeso" step={0.5} className="w-full p-2 cursor-pointer mb-10" min="45" max="160" defaultValue={infos.peso} onChange={(e)=>setInfos({...infos,peso:e.target.value})} />
